@@ -83,16 +83,16 @@ export function Hero() {
           >
             <Sparkles className="w-4 h-4 text-teal-400" />
             <span className="text-sm font-medium text-teal-300">
-              Professional Web Development in Dumai
+              Jasa Pembuatan Website Profesional di Dumai
             </span>
           </motion.div>
         </FadeIn>
 
         <FadeIn direction="up" delay={0.3}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Wujudkan Ide Bisnis Anda Menjadi {' '}
+            Solusi Website Keren untuk Bisnis{' '}
             <span className="bg-gradient-to-r from-teal-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Website Profesional
+              Naik Kelas & Go Digital
             </span>
           </h1>
         </FadeIn>
