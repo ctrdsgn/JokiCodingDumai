@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+/// Service packages offered (e.g., Landing Page, E-Commerce)
+model Service {
+  id          String   @id @default(cuid())
+  title       String
+  description String   @db.Text
+  price       String
+  icon        String?
+  features    Json     // Array of feature strings
+  gradient    String?  // e.g., "from-teal-500 to-cyan-500"
+  popular     Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+/// Portfolio projects showcase
+model Project {
+  id          String   @id @default(cuid())
+  title       String
+  description String   @db.Text
+  imageUrl    String
+  category    String
+  tags        Json     // Array of tag strings
+  link        String?
+  github      String?
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+/// Client order requests from the order form
+model Order {
+  id          String   @id @default(cuid())
+  clientName  String
+  whatsapp    String
+  email       String
+  service     String
+  description String   @db.Text
+  budget      String?
+  status      OrderStatus @default(PENDING)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum OrderStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+/// Promotional offers and discounts
+model Promo {
+  id          String   @id @default(cuid())
+  title       String
+  description String   @db.Text
+  discount    String   // e.g., "20% OFF" or "Save Rp 3jt"
+  validUntil  DateTime?
+  gradient    String?  // e.g., "from-red-500 to-pink-500"
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
