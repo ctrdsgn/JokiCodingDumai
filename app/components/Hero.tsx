@@ -90,18 +90,16 @@ export function Hero() {
 
         <FadeIn direction="up" delay={0.3}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Transform Your Ideas Into{' '}
+            Wujudkan Ide Bisnis Anda Menjadi {' '}
             <span className="bg-gradient-to-r from-teal-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Digital Reality
+              Website Profesional
             </span>
           </h1>
         </FadeIn>
 
         <FadeIn direction="up" delay={0.4}>
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10">
-            We craft modern, high-performance websites that drive results. 
-            From landing pages to full-stack applications, we bring your vision to life 
-            with cutting-edge technology and stunning design.
+           Lupakan Website Lemot. Kami Bangun Platform Digital Berperforma Tinggi Yang Siap Membantu Bisnis Anda Naik Kelas. Cepat, Modern, Dan Full Custom Sesuai Kebutuhan.
           </p>
         </FadeIn>
 
